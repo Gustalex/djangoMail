@@ -31,8 +31,8 @@ def envia_email(request):
 
         try:
             email.send()
-            return JsonResponse({'message': 'Email enviado com sucesso'}, status = 200)
+            return JsonResponse({'status': 'success','message': 'Email enviado com sucesso'}, status = 200)
         except Exception as e:
-            return JsonResponse({'message': 'Erro ao enviar email'}, status = 500)
+            return JsonResponse({'status': 'fail', 'message':str(e)}, status = 500)
         
     return JsonResponse({"message": 'Request invalido'}, status = 400)
