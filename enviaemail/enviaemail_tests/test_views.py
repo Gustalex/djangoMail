@@ -18,6 +18,6 @@ class EmailTest(TestCase):
         response_content = json.loads(response.content)
         self.assertEqual(response_content, {'status': 'success', 'message': 'Email enviado com sucesso'})
 
-        #checa se o email foi enviado
+        #confirma a saida do email
         self.assertEqual(len(mail.outbox),1)
         self.assertEqual(mail.outbox[0].subject, 'Teste Subject')
