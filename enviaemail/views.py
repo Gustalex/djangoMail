@@ -4,15 +4,6 @@ from django.views.decorators.csrf import csrf_exempt
 from decouple import config
 import json
 
-# pipenv run python manage.py runserver para rodar o servidor no package.json
-# ou fazer um script no package.json para cada sistema operacional e fazer um .sh e um .bat
-# "scripts": {
-#    "dev:unix": "concurrently \"nodemon serve.js\" \"npm run test\" \"./start_server.sh\"",
-#    "dev:win": "concurrently \"nodemon serve.js\" \"npm run test\" \"start_server.bat\"",
-#   "test": "jest",
-#    "test:watch": "jest --watch"
-#}
-
 @csrf_exempt
 def envia_email(request):
     if request.method == 'POST':
